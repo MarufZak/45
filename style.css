@@ -1,0 +1,12 @@
+div {
+    height: 100px;
+    margin-bottom: 10px;
+    background: red;
+}
+
+.active {
+    width: 400px;
+    background: yellow !important;
+    color: blue !important;
+}
+
