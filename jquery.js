@@ -53,37 +53,47 @@ function jQ(params) {
         }
         return this
     }
-    this.classes = function (event , value) {  
-        for (let i = 0; i < this.element.length; i++) {
-            if (event == 'addClass' && typeof value == 'string') {
-                this.element[i].classList.add(value)
-            } else if (event == 'removeClass' && typeof value == 'string') {
-                this.element[i].classList.remove(value)
+    this.addClass = function (addClass) {  
+        if (typeof addClass == 'string') {
+            for (let i = 0; i < this.element.length; i++) {
+                this.element[i].classList.add(addClass)            
+            }
+        }
+        return this
+    }
+    this.removeClass = function (removeClass) {  
+        if (typeof removeClass == 'string') {
+            for (let i = 0; i < this.element.length; i++) {
+                this.element[i].classList.remove(removeClass)            
             }
         }
         return this
     }
     this.width = function (width) {  
-        for (let i = 0; i < this.element.length; i++) {
-            if (typeof width == 'number') {
-                this.element[i].style.width = width + 'px'
-            } else if (typeof width == 'string') {
+        if (typeof width == 'string') {
+            for (let i = 0; i < this.element.length; i++) {
                 this.element[i].style.width = width
-            } else {
-                this.element[i].width = this.element[i].width
-            }        
+            } 
+        } else if (typeof width == 'number') {
+            for (let i = 0; i < this.element.length; i++) {
+                this.element[i].style.width = width + 'px'                
+            }
+        } else if (width == null) {
+            console.log(this.element[0].clientWidth);
         }
         return this
     }
     this.height = function (height) {  
-        for (let i = 0; i < this.element.length; i++) {
-            if (typeof height == 'number') {
-                this.element[i].style.height = height + 'px'
-            } else if (typeof height == 'string') {
+        if (typeof height == 'string') {
+            for (let i = 0; i < this.element.length; i++) {
                 this.element[i].style.height = height
-            } else {
-                this.element[i].height = this.element[i].height
-            }        
+            } 
+        } else if (typeof height == 'number') {
+            for (let i = 0; i < this.element.length; i++) {
+                this.element[i].style.height = height + 'px'                
+            }
+        } else if (height == null) {
+            console.log(this.element[0].clientHeight);
         }
         return this
     }

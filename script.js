@@ -5,5 +5,3 @@ let x = $('div').on('click', function () {
         color: 'white',
         background: '#50ff99'
 })
-
-console.log(x);
