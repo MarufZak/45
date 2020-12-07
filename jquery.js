@@ -11,7 +11,7 @@ function $(selector) {
 }
 
 function jQ(params) {
-    this.element = params
+    this.element = params 
     this.on = function (event, callBackFunction) {  
         for (let i = 0; i < this.element.length; i++) {
             this.element[i].addEventListener(event, callBackFunction)            
@@ -78,8 +78,8 @@ function jQ(params) {
             for (let i = 0; i < this.element.length; i++) {
                 this.element[i].style.width = width + 'px'                
             }
-        } else if (width == null) {
-            console.log(this.element[0].clientWidth);
+        } else if (width === undefined) {
+            return this.element[0].clientWidth
         }
         return this
     }
@@ -92,12 +92,10 @@ function jQ(params) {
             for (let i = 0; i < this.element.length; i++) {
                 this.element[i].style.height = height + 'px'                
             }
-        } else if (height == null) {
-            console.log(this.element[0].clientHeight);
+        } else if (height === undefined) {
+            return this.element[0].clientHeight
         }
         return this
     }
 }
-
-/* Вашим домашним заданием будет сделать методы которые будут удалять и добавлять классы (addClass, removeClass). Также сделать методы которые будут изменять ширину и высоту элементов, при этом если вы получаете просто число, то сами добавляете “px”, а если получаете строку, то просто передаете для ширины, но если вы ничего не получаете, то возвращаете ширину или высоту первого элемента. (height, width) */
 

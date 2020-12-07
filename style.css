@@ -2,6 +2,8 @@ div {
     height: 100px;
     margin-bottom: 10px;
     background: red;
+    transition: 1000ms;
+    width: 100%;
 }
 
 .active {
@@ -9,4 +11,3 @@ div {
     background: yellow !important;
     color: blue !important;
 }
-
