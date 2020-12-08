@@ -97,5 +97,42 @@ function jQ(params) {
         }
         return this
     }
+    this.containsClass = function (el) {  
+        if (typeof el == 'string') {
+            for (let i = 0; i < this.element.length; i++) {
+                if (this.element[i].classList.contains(el)) {
+                    return true
+                } else {
+                    return false
+                }  
+            }
+        }
+    }
+    this.hover = function (fun) {  
+        if (typeof fun === 'function') {
+            for (let i = 0; i < this.element.length; i++) {
+                this.element[i].addEventListener('mouseover',fun)            
+            }
+        }
+        return this
+    }
+    this.prev = function () {  
+        for (let i = 0; i < this.element.length; i++) {
+            return this.element[i].previousElementSibling           
+        }
+        return this
+    }
+    this.child = function () {  
+        for (let i = 0; i < this.element.length; i++) {
+            return this.element[i].children            
+        }
+        return this
+    }
+
 }
 
+/* Вашим домашним заданием будет сделать несколько методов: 
+1)  Проверяет наличие класса у элемента. Возвращает истину или ложь.
+2)  Выполняет переданную функцию при наведении на элемент.
+3)  Возвращает предыдущий элемент.
+4)  Возвращает дочерний элемент. */
